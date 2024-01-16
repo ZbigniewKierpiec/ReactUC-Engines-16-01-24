@@ -1,0 +1,92 @@
+:root {
+    --color-primary: #eb2f64;
+    --color-primary-light: #FF3366;
+    --color-primary-dark: #BA265D;
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+    --color-white:#fff;
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+    --color-header:darkblue;
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+    --background-color: #15112E;background: -webkit-linear-gradient(bottom, #15112E, #526CAD);
+    background: -moz-linear-gradient(bottom, #15112E, #526CAD);
+    background: linear-gradient(to top, #15112E, #526CAD);
+    --line: 1px solid var(--color-grey-light-2);
+    --margin-first:1.9rem;
+    --system-bg-color:red;
+    --system-bg-color-active:green;
+    --btn-width:7.8rem;
+    --btn-height:7.8rem;
+    --btn-border-radius:1rem;
+    --animate-duration: 1.5s;
+}
+
+$bp-largest: 75em;     // 1200px
+$bp-large: 68.75em;    // 1100px
+$bp-medium: 56.25em;   // 900px
+$bp-small: 37.5em;     // 600px
+$bp-smallest: 31.25em; // 500px
+
+* {
+    margin: 0;
+    padding: 0;
+   button{
+    cursor: pointer;
+   
+   }
+   
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    -webkit-tap-highlight-color: transparent;
+    -moz-backface-visibility: hidden;
+   
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+    @include respond(tab-land) { // width < 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+        font-size: 42.25%; //1 rem = 9px, 9/16 = 50%
+    }
+
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+    
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12, 12/16
+    }
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    min-height: 100vh;
+  
+
+}
+
+
+::selection {
+  
+
+
+
+
+}
