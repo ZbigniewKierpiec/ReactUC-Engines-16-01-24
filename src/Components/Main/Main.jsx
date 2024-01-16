@@ -44,7 +44,7 @@ const reducer = (state, action) => {
 
     default:
       // If no specific case matches, return the default home component
-      return { component: <Settings/> };
+      return { component: <FlipTops/> };
   }
 };
 export default function Main({ active }) {

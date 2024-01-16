@@ -111,23 +111,23 @@ export default function Tabs() {
   const tabRef = useRef(null);
   const widthRef = useRef(null);
   console.log(activeTab);
-  useEffect(() => {
-    const activeTabElement = tabRef.current.querySelector(".active");
-    const newTabStyle = {
-      left: activeTabElement.offsetLeft,
-      width: activeTabElement.offsetWidth,
-    };
-    setTabStyle(newTabStyle);
-  }, []);
+  // useEffect(() => {
+  //   const activeTabElement = tabRef.current.querySelector(".active");
+  //   const newTabStyle = {
+  //     left: activeTabElement.offsetLeft,
+  //     width: activeTabElement.offsetWidth,
+  //   };
+  //   setTabStyle(newTabStyle);
+  // }, []);
 
   const handleTabClick = (tabId, index) => {
-    const activeTabElement = tabRef.current.querySelector(".active");
-    const newActiveTabElement = tabRef.current.querySelector(`#tab-${tabId}`);
-    const newTabStyle = {
-      left: newActiveTabElement.offsetLeft,
-      width: newActiveTabElement.offsetWidth,
-    };
-    setTabStyle(newTabStyle);
+    // const activeTabElement = tabRef.current.querySelector(".active");
+    // const newActiveTabElement = tabRef.current.querySelector(`#tab-${tabId}`);
+    // const newTabStyle = {
+    //   left: newActiveTabElement.offsetLeft,
+    //   width: newActiveTabElement.offsetWidth,
+    // };
+    // setTabStyle(newTabStyle);
     setActiveTab(tabId);
     setPosition(index);
 
@@ -152,17 +152,22 @@ export default function Tabs() {
     <div className={styles.tabscontainer}>
       <div className={styles.tabs} ref={tabRef}>
         {tabs.map((tab, index) => (
-          <div
-            key={tab.id}
-            id={`tab-${tab.id}`}
-            ref={widthRef}
-            className={`style.tab ${activeTab === tab.id ? "active" : ""}`}
-            onClick={() => handleTabClick(tab.id, index)}
-          >
-            {tab.title}
-          </div>
+          <>
+            <button
+              key={tab.id}
+              id={`tab-${tab.id}`}
+              ref={widthRef}
+              onClick={() => handleTabClick(tab.id, index)}
+              className={styles.TabBtn}
+            >
+              {tab.title}
+            </button>
+          </>
         ))}
-        <div className={styles.tabslider} style={tabStyle}></div>
+        <div
+          style={{ transform: `translateX(${position * 100 - 100}%)` }}
+          className={styles.tabslider}
+        ></div>
       </div>
       <div className={styles.tabcontent}>
         {/* {tabs.map((tab) => (
@@ -175,7 +180,7 @@ export default function Tabs() {
           ))} */}
 
         {activeTab === 1 && (
-          <div className={styles.first}>
+          <div className={`${styles.first} ${activeTab ? 'animate__animated animate__fadeIn ':''}   `}>
             <div className={styles.firstLeft}>
               <p>device status</p>
 
@@ -209,7 +214,7 @@ export default function Tabs() {
           </div>
         )}
         {activeTab === 2 && (
-          <div className={styles.secend}>
+          <div className={`${styles.secend}  ${activeTab ? 'animate__animated animate__zoomIn ':''} `}>
             <p className={styles.p}>log feedback...</p>
 
             <div className={styles.secendBtn}>
@@ -224,7 +229,7 @@ export default function Tabs() {
           </div>
         )}
         {activeTab === 3 && (
-          <div className={styles.third}>
+          <div className={`${styles.third}  ${activeTab ? 'animate__animated animate__fadeIn ':''}   `}>
             <div className={styles.thirdCenter}>
               <div className={styles.thirdCenterBox}>
                 {ip.map((items) => {
@@ -245,3 +250,17 @@ export default function Tabs() {
   );
 }
 // style={{ transform: `translateX(${position * 100}%)`} }
+
+// style={tabStyle}
+
+{
+  /* <div
+            key={tab.id}
+            id={`tab-${tab.id}`}
+            ref={widthRef}
+            className={`style.tab ${activeTab === tab.id ? "active" : ""}`}
+            onClick={() => handleTabClick(tab.id, index)}
+          >
+            {tab.title}
+          </div>  */
+}
