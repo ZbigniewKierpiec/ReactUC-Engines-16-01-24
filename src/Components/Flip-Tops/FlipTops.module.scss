@@ -1,22 +1,30 @@
-.container{
+.container {
   width: 100%;
   height: 100%;
-  background-color: honeydew;
+
 }
-.box{
-  width: 90%;
-  height: 90%;
-  background-color: lightblue;
-  width: 100%;
-  stroke:black;
-  fill:blue;
+.box {
+  width: 70%;
+  height: 100%;
+
+  margin: 0 auto;
+  stroke: black;
+  fill: blue;
   display: grid;
-  grid-template-columns: repeat(12,1fr);
-  grid-template-rows: repeat(12,1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  // background-color: rgba(255, 0, 0, 0.063);
 }
 
-.svg{
- grid-column: 1/span 12;
- grid-row: 1/span 12 !important;
- 
+.svg {
+  grid-column: 1 / span 12;
+  grid-row: 1 / span 12 !important;
+
 }
+
+/////////////////////////////////////////////////////////////
+///
+///
+///
+///
+///
