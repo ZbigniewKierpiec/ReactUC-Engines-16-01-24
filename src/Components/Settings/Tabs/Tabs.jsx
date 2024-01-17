@@ -154,6 +154,7 @@ export default function Tabs() {
         {tabs.map((tab, index) => (
           <>
             <button
+            
               key={tab.id}
               id={`tab-${tab.id}`}
               ref={widthRef}

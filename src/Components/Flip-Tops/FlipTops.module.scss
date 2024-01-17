@@ -10,16 +10,17 @@
   margin: 0 auto;
   stroke: black;
   fill: blue;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  // background-color: rgba(255, 0, 0, 0.063);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+ 
 }
 
 .svg {
-  grid-column: 1 / span 12;
-  grid-row: 1 / span 12 !important;
-
+  
+  width: 90%;
+  height: 100%;
+  
 }
 
 /////////////////////////////////////////////////////////////

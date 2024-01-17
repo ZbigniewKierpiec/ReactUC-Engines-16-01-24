@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./FlipTops.module.scss";
 import "animate.css";
 import { useItemContext } from "../../Hooks/ItemProvider";
 export default function FlipTops() {
   const { clickedItem } = useItemContext();
   let active = true;
+ 
+
+
+
 
   return (
     <div
@@ -12,13 +16,13 @@ export default function FlipTops() {
         active ? "animate__animated animate__fadeIn animate__slower 2s " : ""
       }`}
     >
-      <div className={styles.box}>
+      <div         className={styles.box}>
         {/*----------------------------- nowy-----------------------------------------------  */}
 
         <svg
         className={styles.svg}
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1920 1080"
+          viewBox='0 0 1920 1080'
           shapeRendering="geometricPrecision"
           textRendering="geometricPrecision"
           stroke="inherit"
